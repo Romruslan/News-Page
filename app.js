@@ -58,7 +58,7 @@ const http = customHttp();
 
 const newsService = (function () {
   const apiKey = "61210602f54a4c508d4ac77c856ae566";
-  const apiUrl = "https://newsapi.org/v2";
+  const apiUrl = "https://news-api-v2.herokuapp.com";
 
   return {
     topHeadlines(country = "ua", cb) {
@@ -135,6 +135,7 @@ function renderNews(news) {
 }
 
 // Function clear container
+
 function clearContainer(container) {
   // container.innetHTML = '';
   let child = container.lastElementChild;
@@ -145,6 +146,7 @@ function clearContainer(container) {
 }
 
 // News item template function
+
 function newsTemplate({ urlToImage, title, url, description }) {
   return `
   <div class="col s12">
@@ -173,6 +175,7 @@ function showEmpty() {
 }
 
 // Show Loader function
+
 function showLoader() {
   document.body.insertAdjacentHTML(
     "afterbegin",
@@ -185,6 +188,7 @@ function showLoader() {
 }
 
 // Remove loader function
+
 function removeLoader() {
   const loader = document.querySelector(".progress");
   if (loader) {
